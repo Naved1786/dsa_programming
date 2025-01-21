@@ -81,6 +81,29 @@ public class linked_list_9 {
             }
             return false;
         }
+        public static Node deleteNode(Node head, int k){
+            if (head == null || k <= 0) {
+                return head; // No deletion for invalid k or empty list
+            }
+
+            if (k == 1) {
+                // Delete the head node
+                return head.next;
+            }
+
+            Node current = head;
+            int i = 1; // 1-based indexing
+            while (i < k - 1 && current.next != null) {
+                current = current.next;
+                i++;
+            }
+
+            if (current.next != null) {
+                current.next = current.next.next;
+            }
+
+            return head;
+        }
 
     }
 
@@ -96,5 +119,7 @@ public class linked_list_9 {
         linkedList.countEvenNumbers(head);
         boolean bl=linkedList.SearchElements(head,3);
         System.out.println(bl);
+        linkedList.deleteNode(head,2);
+        linkedList.display(head);
     }
 }
