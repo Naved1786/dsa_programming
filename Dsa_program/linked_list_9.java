@@ -104,7 +104,26 @@ public class linked_list_9 {
 
             return head;
         }
+        public static void modifyNode(Node head, int k, int newValue) {
+            if (head == null || k <= 0) {
+                System.out.println("Invalid index or empty list.");
+                return;
+            }
 
+            Node current = head;
+            int i = 1; // 1-based indexing
+            while (i < k && current != null) {
+                current = current.next;
+                i++;
+            }
+
+            if (current == null) {
+                System.out.println("Index out of bounds.");
+                return;
+            }
+            // Modify the node's value
+            current.data = newValue;
+        }
     }
 
     public static void main(String[] args) {
@@ -120,6 +139,8 @@ public class linked_list_9 {
         boolean bl=linkedList.SearchElements(head,3);
         System.out.println(bl);
         linkedList.deleteNode(head,2);
+        linkedList.display(head);
+        linkedList.modifyNode(head,2,40);
         linkedList.display(head);
     }
 }
