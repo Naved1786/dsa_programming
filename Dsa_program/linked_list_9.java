@@ -55,6 +55,33 @@ public class linked_list_9 {
             int average=sum/size;
             System.out.println("Average of total elements are : "+average);
         }
+        public static void countEvenNumbers(Node head){
+            int count=0;
+            Node current=head;
+            while(current.next!=null){
+                if(current.data%2==0){
+                    count++;
+                }
+                current=current.next;
+            }
+            if(current.data%2==0){
+                count++;
+            }
+            System.out.println(count);
+        }
+        public static boolean SearchElements(Node head, int a){
+            Node current=head;
+            while(current.next!=null){
+                if(current.data==a){
+                    return true;
+                }
+            }
+            if(current.data==a){
+                return true;
+            }
+            return false;
+        }
+
     }
 
     public static void main(String[] args) {
@@ -66,5 +93,8 @@ public class linked_list_9 {
         linkedList.display(head);
         linkedList.SumOfAllElements(head);
         linkedList.AverageOfAllElement(head);
+        linkedList.countEvenNumbers(head);
+        boolean bl=linkedList.SearchElements(head,3);
+        System.out.println(bl);
     }
 }
