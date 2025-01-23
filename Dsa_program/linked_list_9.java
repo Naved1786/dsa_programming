@@ -132,10 +132,10 @@ public class linked_list_9 {
             Node current = head;
 
             while (current != null) {
-                Node next = current.next; // Store the next node
+                Node newNode = current.next; // Store the next node
                 current.next = prev;      // Reverse the current node's pointer
                 prev = current;           // Move prev to the current node
-                current = next;           // Move to the next node
+                current = newNode;           // Move to the next node
             }
 
             return prev; // New head of the reversed list
