@@ -22,8 +22,6 @@ public class linked_list_10 {
             System.out.println(prod);
         }
     }
-
-
     public static void main(String[] args) {
         LinkedList<Integer> list=new LinkedList();
         list.add(12);
