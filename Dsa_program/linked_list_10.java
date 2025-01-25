@@ -21,6 +21,14 @@ public class linked_list_10 {
             System.out.println("product of all the data : ");
             System.out.println(prod);
         }
+        public static void sum(LinkedList<Integer> list){
+            int sum=0;
+            for(int i=0;i<list.size();i++){
+                sum+=list.get(i);
+            }
+            System.out.println("sum of all the data : ");
+            System.out.println(sum);
+        }
     }
     public static void main(String[] args) {
         LinkedList<Integer> list=new LinkedList();
@@ -31,5 +39,6 @@ public class linked_list_10 {
         list.add(17);
         list.add(18);
         linkedlist.product(list);
+        linkedlist.sum(list);
     }
 }
